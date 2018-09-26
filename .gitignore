@@ -1,1 +1,7 @@
 .ethereum/
+.themes
+.fonts
+.icons
+.ethereum
+.config
+contracts
