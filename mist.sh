@@ -43,7 +43,7 @@ sudo docker run -it --rm \
     -v $SCRIPTPATH/.config/:/root/.config \
     -v $SCRIPTPATH/contracts/:/root/contracts \
     --shm-size 2g \
-    mist \
+    mist:10.0 \
         --rpc http://$SERVER:8545
 
 #docker args

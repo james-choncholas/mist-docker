@@ -3,5 +3,5 @@
 set -e
 
 sudo docker build \
-    -t mist \
+    -t mist:10.0 \
     .
