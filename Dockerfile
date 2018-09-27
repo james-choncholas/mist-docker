@@ -1,10 +1,10 @@
 FROM ubuntu:16.04
 
-LABEL maintainer "Marco Spoerl <ms@marcospoerl.de>"
-
 RUN apt-get update && apt-get install -y \
   ca-certificates \
   dbus \
+  libcanberra-gtk-module \
+  libcanberra-gtk3-module \
   libasound2 \
   libgconf-2-4 \
   libgtk2.0-0 \
