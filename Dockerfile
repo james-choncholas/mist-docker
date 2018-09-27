@@ -1,7 +1,5 @@
 FROM ubuntu:16.04
 
-LABEL maintainer "Marco Spoerl <ms@marcospoerl.de>"
-
 RUN apt-get update && apt-get install -y \
   ca-certificates \
   dbus \
@@ -26,10 +24,10 @@ WORKDIR /root
 
 COPY sha256checksum .
 
-RUN wget https://github.com/ethereum/mist/releases/download/v0.10.0/Mist-linux64-0-10-0.zip && \
+RUN wget https://github.com/ethereum/mist/releases/download/v0.11.1/Mist-linux64-0-11-1.zip && \
   sha256sum -c sha256checksum && \
-  unzip Mist-linux64-0-10-0.zip -d mist && \
-  rm Mist-linux64-0-10-0.zip
+  unzip Mist-linux64-0-11-1.zip -d mist && \
+  rm Mist-linux64-0-11-1.zip
 
 WORKDIR /root/mist
 
