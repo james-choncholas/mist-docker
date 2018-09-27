@@ -22,7 +22,7 @@ if [ "$(sudo docker ps -q -f name=geth)" ]; then
     SERVER=geth
 else
     # port 8545 must be opened for the RPC interface
-    PORTMAP="-p 8545:8545"
+    PORTMAP="-p 8546:8546"
 fi
 
 xhost local:root
@@ -44,6 +44,7 @@ sudo docker run -it --rm \
     -v $SCRIPTPATH/contracts/:/root/contracts \
     --shm-size 2g \
     mist:11.1 \
+        --skiptimesynccheck \
         --rpc ws://$SERVER:8546
 
 #docker args
