@@ -3,6 +3,8 @@ FROM ubuntu:16.04
 RUN apt-get update && apt-get install -y \
   ca-certificates \
   dbus \
+  libcanberra-gtk-module \
+  libcanberra-gtk3-module \
   libasound2 \
   libgconf-2-4 \
   libgtk2.0-0 \
