@@ -6,7 +6,7 @@
 # connect to this containers RPC server.
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-ETHCHAINPATH=$HOME/ethereum-chain
+ETHCHAINPATH=/mnt/harddrive/ethereum
 
 
 # stop old container

@@ -44,6 +44,7 @@ sudo docker run -it --rm \
     -v $SCRIPTPATH/contracts/:/root/contracts \
     --shm-size 2g \
     mist:10.0 \
+        --skiptimesynccheck \
         --rpc http://$SERVER:8545
 
 #docker args
