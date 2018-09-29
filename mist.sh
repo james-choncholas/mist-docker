@@ -15,11 +15,11 @@ fi
 
 if [ "$(sudo docker ps -q -f name=geth)" ]; then
     echo "geth is running on this machine"
-    # Note if mist is running on the same machine as geth RPC server
-    # just connect to the RPC interface through the default
-    # docker network
-    PORTMAP=""
-    SERVER=geth
+    # Note if mist is running on the same machine as geth RPC server,
+    # the RPC port (8545) has been taken by geth. Map around it with
+    # port 8540.
+    PORTMAP="-p 8540:8545"
+    SERVER=$(hostname -I | awk '{print $1}')
 else
     # port 8545 must be opened for the RPC interface
     PORTMAP="-p 8546:8546"
