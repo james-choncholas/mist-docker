@@ -25,6 +25,11 @@ sudo docker run -d --rm \
     -v $ETHCHAINPATH:/root/.ethereum \
     ethereum/client-go \
         --syncmode "full" \
+        --rpc \
+        --rpcaddr 0.0.0.0 \
+        --rpcport 8545 \
+        --rpccorsdomain 0.0.0.0 \
+        --rpcapi "eth,web3,miner,net,admin,personal,debug" \
         --ws \
         --wsaddr 0.0.0.0 \
         --wsport 8546 \
