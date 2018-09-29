@@ -19,8 +19,7 @@ if [ "$(sudo docker ps -q -f name=geth)" ]; then
     # the RPC port (8545) has been taken by geth. Map around it with
     # port 8540.
     PORTMAP="-p 8540:8545"
-    #PORTMAP=""
-    SERVER=localhost
+    SERVER=$(hostname -I | awk '{print $1}')
 else
     # port 8545 must be opened for the RPC interface
     PORTMAP="-p 8545:8545"
