@@ -6,8 +6,7 @@
 # connect to this containers RPC server.
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-ETHCHAINPATH=/mnt/harddrive/ethereum
-MYIP=$(hostname -I | awk '{print $1}')
+ETHCHAINPATH=/mnt/speeddrive/ethereum
 
 
 # stop old container
@@ -24,7 +23,7 @@ sudo docker run -d --rm \
     -p 8546:8546 \
     -v $ETHCHAINPATH:/root/.ethereum \
     ethereum/client-go \
-        --syncmode "full" \
+        --syncmode "fast" \
         --rpc \
         --rpcaddr 0.0.0.0 \
         --rpcport 8545 \
@@ -42,10 +41,14 @@ sudo docker run -d --rm \
 #--wsport WS-RPC server listening port (default: 8546)
 #--wsapi API's offered over the WS-RPC interface (default: "eth,net,web3")
 #--wsorigins Origins from which to accept websockets requests
-
 #--rpccorsdomain turns on "cross-origin resource sharing" to allow webpages
 # served by the listed domain to access the rpc interface. If a simple status
 # page is served by the same machine, allow it access
 
-# test HTTP RPC with:
+# state trie dstabase cache size
+#--cache=1024 \
+#--memory 3g \
+#--memory-swap 3g \
+
+# test rpc with:
 #curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}' http://localhost:8545
