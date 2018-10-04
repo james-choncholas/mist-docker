@@ -4,7 +4,7 @@
 # RPC port 8545.
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-SERVER=192.168.1.4
+SERVER=gramps
 
 # stop old container
 if [ "$(sudo docker ps -q -f name=mist)" ]; then
